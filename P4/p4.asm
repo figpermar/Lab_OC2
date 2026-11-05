@@ -7,9 +7,16 @@ section .text
 global _start
 
 _start:
+push ebp
+mov ebp, esp
+
 call clrscr
+
 mov eax, mensaje
 call puts
+
+mov esp, ebp
+pop ebp
 
 mov eax, 1
 xor ebx, ebx
